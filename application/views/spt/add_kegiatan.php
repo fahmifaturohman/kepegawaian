@@ -140,7 +140,7 @@
                     <div class="form-group col-6">
                         <label for="" class="control-label">Mengetahui</label>
                         <div class="input-group">
-                            <input type="text" class="form-control typehead input-cari-ttd required" placeholder="Mengetahui" readonly>
+                            <input type="text" class="form-control typehead input-cari-ttd" placeholder="Mengetahui" readonly>
                             <input type="hidden" name="ttd" class="form-control typehead input-ttd" placeholder="Mengetahui">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="zmdi zmdi-account-o"></i></span>
