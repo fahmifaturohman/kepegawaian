@@ -17,7 +17,7 @@
                         <div class="list-menimbang">
                             <div class="row menimbang" style="padding-bottom: 10px;">
                                 <div class="input-group col-md-12">
-                                    <textarea name="menimbang[]" class="form-control input-menimbang" cols="30" rows="2"></textarea>                                    
+                                    <textarea name="menimbang[]" class="form-control input-menimbang required" cols="30" rows="2"></textarea>                                    
                                 </div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                         <div class="list-dasar">
                             <div class="row dasar" style="padding-bottom: 10px;">
                                 <div class="input-group col-md-12">
-                                    <textarea name="dasar[]" class="form-control input-dasar" cols="30" rows="2"></textarea>                                    
+                                    <textarea name="dasar[]" class="form-control input-dasar required" cols="30" rows="2"></textarea>                                    
                                 </div>
                             </div>
                         </div>
@@ -40,17 +40,17 @@
                     <div class="col-12"><hr></div>  
                     <div class="form-group col-6">
                         <label for="input-cari-pegawai" class="control-label">Berdasarkan Surat</label>                        
-                            <input type="text" name="berdasarkan" class="form-control input-berdasarkan" placeholder="Berdasarkan" autocomplete="off">
+                            <input type="text" name="berdasarkan" class="form-control input-berdasarkan required" placeholder="Berdasarkan" autocomplete="off">
                         <div class="text-danger"></div>
                     </div>
                     <div class="form-group col-3">
                         <label for="input-cari-pegawai" class="control-label">Nomor</label>                        
-                            <input type="text" name="nomor" class="form-control input-nomor" placeholder="Nomor" autocomplete="off">
+                            <input type="text" name="nomor" class="form-control input-nomor required" placeholder="Nomor" autocomplete="off">
                         <div class="text-danger"></div>
                     </div>
                     <div class="form-group col-3">
                         <label for="input-cari-pegawai" class="control-label">Tanggal</label>
-                        <input type="text" name="tgl_sumber" class="form-control input-tanggal-sumber datepicker-autoclose" placeholder="yyyy-mm-dd" autocomplete="off">
+                        <input type="text" name="tgl_sumber" class="form-control input-tanggal-sumber datepicker-autoclose required" placeholder="yyyy-mm-dd" autocomplete="off">
                         <div class="text-danger"></div>
                     </div>
                     <div class="form-group col-12">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="" class="control-label">Untuk Mengikuti</label>
-                        <textarea name="perihal" id="" cols="30" rows="5" class="form-control input-perihal"></textarea>
+                        <textarea name="perihal" id="" cols="30" rows="5" class="form-control input-perihal required"></textarea>
                         <div class="text-danger"></div>
                     </div>
                     <div class="col-12"><hr><label>Menugaskan Saudara :</label></div>
@@ -72,7 +72,7 @@
                         <div class="row petugas">
                             <div class="form-group col-5">
                                 <label for="" class="control-label">Petugas 1</label>
-                                <input type="text" name="nama[]" class="form-control typehead input-nama input-cari-pegawai-all" autocomplete="off">
+                                <input type="text" name="nama[]" class="form-control typehead input-nama input-cari-pegawai-all required" autocomplete="off">
                                 <div class="text-danger"></div>
                             </div>
                             <div class="form-group col-5">
@@ -95,12 +95,12 @@
                         <div class="row tahap">
                             <div class="form-group col-5">
                                 <label for="" class="control-label">Tahap 1</label>
-                                <input type="text" name="tahap[]" class="form-control input-tahap" autocomplete="off">
+                                <input type="text" name="tahap[]" class="form-control input-tahap required" autocomplete="off">
                                 <div class="text-danger"></div>
                             </div>
                             <div class="form-group col-5">
                                 <label for="" class="control-label">Tempat</label>
-                                <input type="text" name="tempat[]" class="form-control input-tempat" autocomplete="off">
+                                <input type="text" name="tempat[]" class="form-control input-tempat required" autocomplete="off">
                                 <div class="text-danger"></div>
                             </div>
                             <div class="form-group col-1 p-pt-20">
@@ -112,7 +112,7 @@
                     <div class="form-group col-6">
                         <label for="" class="control-label">Ditetapkan Pada Tanggal</label>
                         <div class="input-group">
-                            <input type="text" name="tgl" class="form-control input-tgl datepicker-autoclose" placeholder="dd/mm/yyyy" autocomplete="off" readonly>
+                            <input type="text" name="tgl" class="form-control input-tgl datepicker-autoclose required" placeholder="dd/mm/yyyy" autocomplete="off" readonly>
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="zmdi zmdi-calendar"></i></span>
                             </div>

@@ -8,8 +8,8 @@
                     <div class="page-title-box">
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item">Kepegawaian</li>
-                            <li class="breadcrumb-item"><a href="<?=base_url('spt')?>">SPT</a></li>
-                            <li class="breadcrumb-item active"><?=$title?></li>
+                            <li class="breadcrumb-item"><a href="<?=base_url('spt/spt_diklat')?>"><?=$title;?></a></li>
+                            <li class="breadcrumb-item active"><?=isThangLabel()?></li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
