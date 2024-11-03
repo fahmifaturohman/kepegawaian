@@ -8,7 +8,7 @@
                     <div class="page-title-box">
                         <h4 class="page-title float-left">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                               <a href="#" type="button" class="btn waves-effect waves-light btn-sm btn-dark btn-spt-plh btn-blue" data-toggle="modal" data-id="spt plh"><i class="ion-plus-circled m-r-5"></i> SPT PLH</a>
+                               <a href="#" type="button" class="btn waves-effect waves-light btn-sm btn-purple btn-spt-plh btn-purple" data-toggle="modal" data-id="spt plh"><i class="ion-plus-circled m-r-5"></i> SPT PLH</a>
                             </div>
                         </h4>
                         <ol class="breadcrumb float-right">

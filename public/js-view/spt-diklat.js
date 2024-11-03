@@ -259,11 +259,22 @@
             if(val.length > 0) success(this)
             else error(this, "*wajib diisi")
         })
+
         $(document).on('keyup', '.input-tempat',function() {
             let val = $(this).val()
             if(val.length > 0) success(this)
             else error(this, "*wajib diisi")
         }).on('blur','.input-tempat', function() {
+            let val = $(this).val()
+            if(val.length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('change', '.input-tgl',function() {
+            let val = $(this).val()
+            if(val.length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur','.input-tgl', function() {
             let val = $(this).val()
             if(val.length > 0) success(this)
             else error(this, "*wajib diisi")
@@ -297,7 +308,9 @@
                 }
             })
 
-            if(valid) postAjax("spt/edit_spt_diklat", "#form-edit")
+            if(valid) { 
+                postAjax("spt/edit_spt_diklat", "#form-edit") 
+            }
         })
 
 

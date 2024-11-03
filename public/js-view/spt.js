@@ -680,6 +680,86 @@
             else error(this, "*wajib diisi")
         })
 
+        $(document).on('keyup','.input-menimbang', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-menimbang', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup','.input-dasar', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-dasar', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup','.input-berdasarkan', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-berdasarkan', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup','.input-nomor', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-nomor', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup','.input-tanggal-sumber', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-tanggal-sumber', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup','.input-perihal', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-perihal', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup','.input-nama', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-nama', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup','.input-tahap', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-tahap', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup','.input-tempat', function() {            
+            typeheadTtd($(this), $('.input-ttd'))
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur', '.input-tempat', function() {
+            if(($(this).val()).length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
 
         $(document).on('submit','#modal-spt-diklat #form-submit-diklat', function(e) {
             e.preventDefault()
@@ -709,7 +789,7 @@
                         if(res['success'] == true) {                        
                             toastNotify(res['msg'])
                             document.getElementById("form-submit-diklat").reset();
-                            $("#dataTableServer").DataTable().draw(true);                           
+                            $("#dataTableServer").DataTable().draw(true);                         
                         }
                         else toastNotify(res['msg'],0)
                     },
