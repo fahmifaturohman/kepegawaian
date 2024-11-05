@@ -36,14 +36,14 @@
                                             <textarea name="berdasarkan" cols="30" rows="3" class="form-control input-berdasarkan"><?=$data->sumber?></textarea>    
                                             <div class="text-danger"></div>
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                             <label for="input-cari-pegawai" class="control-label">Ditugaskan Oleh</label>
                                                 <input type="hidden" name="id_spt" value="<?=$spt->id_spt?>">                        
                                                 <input type="text" value="<?=$data->penugas?>" class="form-control typeahead input-cari-jabatan required" placeholder="contoh : Ketua" autocomplete="off">
                                                 <input type="hidden" name="penugas" value="<?=$spt->penugas?>" class="input-penugas">    
                                             <div class="text-danger"></div>
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                             <label for="input-cari-pegawai" class="control-label">Tanggal</label>
                                             <input type="text" value="<?=$data->tgl_sumber?>" name="tgl_sumber" class="form-control input-tanggal-sumber datepicker-autoclose" placeholder="yyyy-mm-dd" autocomplete="off">
                                             <div class="text-danger"></div>
@@ -55,29 +55,29 @@
                                         </div>
                                         <div class="col-12"><hr><label>Menugaskan Saudara :</label></div>
                                         <div class="col-12 text-right">
-                                        <button type="button" class="form-control col-3 btn btn-outline-success btn-tambah-petugas-kegiatan"><i class="ion-plus-circled"></i> Tambah Petugas</button>
+                                        <button type="button" class="form-control col-lg-3 col-md-3 col-sm-12 btn btn-outline-success btn-tambah-petugas-kegiatan"><i class="ion-plus-circled"></i> Tambah Petugas</button>
                                         </div>
                                         <div class="col-12 list-petugas">
                                             <?php $no = 1; foreach ($detail as $key) { ?>                                        
                                             <div class="row petugas">
-                                                <div class="form-group col-md-4 col-sm-12">
+                                                <div class="form-group col-lg-4 col-md-4 col-sm-12">
                                                     <label for="" class="control-label">Petugas</label>
                                                     <input type="text" name="nama[]" value="<?=$key->nama?>" class="form-control typehead input-nama input-cari-pegawai-all required" autocomplete="off">
                                                     <div class="text-danger"></div>
                                                 </div>
-                                                <div class="form-group col-md-4 col-sm-12">
+                                                <div class="form-group col-lg-4 col-md-4 col-sm-12">
                                                     <label for="" class="control-label">Jabatan</label>
                                                     <input type="hidden" name="id_spt_detail[]" value="<?=$key->id_spt_detail?>">
                                                     <input type="text" name="jabatan[]" value="<?=$key->jabatan?>" class="form-control input-jabatan required" autocomplete="off">
                                                     <input type="hidden" name="nip[]" class="form-control input-nip" value="<?=$key->nip?>">
                                                     <div class="text-danger"></div>
                                                 </div>
-                                                <div class="form-group col-md-3 col-sm-12">
+                                                <div class="form-group col-lg-3 col-md-3 col-sm-12 col-sm-12">
                                                     <label for="" class="control-label">Pangkat</label>   
                                                     <input type="text" name="pangkat[]" class="form-control input-pangkat" value="<?=$key->pangkat?>">
                                                     <div class="text-danger"></div>
                                                 </div>
-                                                <div class="form-group col-md-1 col-sm-12 p-pt-20">
+                                                <div class="form-group col-lg-1 col-md-1 col-sm-12 p-pt-20">
                                                     <?php $count = count($detail); if($no != $count) : ?>
                                                     <label for="" class="control-label text-white">-</label>
                                                     <button type="button" class="form-control btn btn-youtube btn-hapus-petugas-kegiatan" data-id="<?=$key->id_spt_detail?>"><i class="ion-close-circled"></i> hapus</button>
@@ -88,7 +88,7 @@
                                         </div>
                                         <div class="col-12 list-petugas-hapus"><hr></div>
                                         <div class="col-12 text-right">
-                                        <button type="button" class="form-control col-3 btn btn-outline-success btn-tambah-tahap"><i class="ion-plus-circled"></i> Tahap</button>
+                                        <button type="button" class="form-control col-lg-3 col-md-3 col-sm-12 btn btn-outline-success btn-tambah-tahap"><i class="ion-plus-circled"></i> Tahap</button>
                                         </div>
                                         <div class="col-12 list-tahap">
                                             <?php $no2=1; foreach ($tahap as $thp) { ?>
@@ -114,7 +114,7 @@
                                             <?php  } ?>
                                         </div>
                                         <div class="col-12 list-tahap-hapus"><hr></div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                             <label for="" class="control-label">Ditetapkan Pada Tanggal</label>
                                             <div class="input-group">
                                                 <input type="text" name="tgl" value="<?=$spt->tgl?>" class="form-control input-tgl datepicker-autoclose" placeholder="dd/mm/yyyy" autocomplete="off" readonly>
@@ -124,7 +124,7 @@
                                             </div>
                                             <div class="text-danger"></div>
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                             <label for="" class="control-label">Mengetahui</label>
                                             <div class="input-group">
                                                 <input type="text" value="<?=$spt->nama?>" class="form-control typehead input-cari-ttd" placeholder="Mengetahui" readonly>

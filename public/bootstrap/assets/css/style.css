@@ -1096,6 +1096,9 @@ body.fixed-left .side-menu.left {
   .page-title-box .page-title, .page-title-box .breadcrumb {
     float: none;
   }
+  .topbar .topbar-left {
+    background: #0d0255 !important;
+  }
 }
 
 @media (max-width: 480px) {

@@ -31,14 +31,14 @@
                                 <form id ="form-edit" class="form-kegiatan" method="POST">
                                 <div class="row">
                                     <input type="hidden" name="spt_tipe" class="input-spt-tipe" value="spt kegiatan">
-                                    <div class="form-group col-4">
+                                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
                                         <label for="input-cari-pegawai" class="control-label">Pejabat yang memberi tugas :</label>                        
                                         <input type="hidden" name="id_spt" value="<?=$spt->id_spt?>">
                                         <input type="text" value="<?=$data['data']->penugas?>" class="form-control typeahead input-cari-jabatan required" placeholder="contoh : Ketua" autocomplete="off">
                                         <input type="hidden" name="penugas" value="<?=$spt->penugas?>" class="input-penugas">
                                         <div class="text-danger"></div>
                                     </div>               
-                                    <div class="form-group col-lg-4 col-sm-12">
+                                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
                                         <label for="input-cari-pegawai" class="control-label">Hari/Tanggal Kegiatan</label>
                                         <input type="text" name="tgl_kegiatan" value="<?=$data['data']->tgl_kegiatan?>" class="form-control input-daterange-datepicker input-tanggal-kegiatan required" placeholder="Waktu Kegiatan" autocomplete="off">
                                         <input type="hidden" name="tgl_kegiatan_old" value="<?=$data['data']->tgl_kegiatan?>">
@@ -47,12 +47,12 @@
                                         <input type="hidden" name="id_spt_kegiatan" value="<?=$data['data']->id_spt_kegiatan?>">
                                         <div class="text-danger"></div>
                                     </div>      
-                                    <div class="form-group col-lg-4 col-sm-12">
+                                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
                                         <label for="input-cari-pegawai" class="control-label">Pukul</label>
                                         <input type="text" name="pukul" value="<?=$data['data']->pukul?>" class="form-control input-pukul-kegiatan required" placeholder="Waktu Kegiatan" autocomplete="off">
                                         <div class="text-danger"></div>
                                     </div>    
-                                    <div class="form-group col-lg-12 col-sm-12">
+                                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                         <label for="" class="control-label">Tempat</label>
                                         <input type="text" name="tempat" value="<?=$data['data']->tempat_kegiatan?>" class="form-control typehead input-tempat input-cari-tempat required" placeholder="Tempat Kegiatan" autocomplete="off">
                                         <div class="text-danger"></div>
@@ -69,11 +69,11 @@
                                     </div>  
                                     <div class="form-group col-12">
                                         <div class="row">
-                                            <div class="col-2">
+                                            <div class="col-lg-2 col-md-2 col-sm-12">
                                                 <input type="radio" name="dipa_status" class="control-label radio-dipa dipa" value="1" <?=($data['data']->dipa_status == "1") ? ' checked':''?>> 
                                                 <label for="" class="control-label span-dipa">DIPA</label>
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-lg-2 col-md-2 col-sm-12">
                                                 <input type="radio" name="dipa_status" class="control-label radio-dipa non-dipa" value="0" <?=($data['data']->dipa_status == "0") ? ' checked':''?>> 
                                                 <label for="" class="control-label span-dipa">NON DIPA</label>
                                             </div>
