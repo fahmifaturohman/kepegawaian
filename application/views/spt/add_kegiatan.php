@@ -10,7 +10,7 @@
                     <input type="hidden" name="spt_tipe" class="input-spt-tipe">
                     <div class="col-12">
                         <label class="form-label">
-                            <button type="button" class="btn btn-instagram waves-effect waves-light btn-add-menimbang-kegiatan">
+                            <button type="button" class="btn btn-instagram waves-effect waves-light btn-add-menimbang-kegiatan col-sm-12">
                             <span class="btn-label"><i class="fa fa-plus"></i> </span> Tambah Menimbang
                             </button>
                         </label>
@@ -38,18 +38,18 @@
                         </div>
                     </div>
                     <div class="col-12"><hr></div> 
-                    <div class="form-group col-4">
+                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
                         <label for="input-cari-pegawai" class="control-label">Pejabat yang memberi tugas :</label>                        
                         <input type="text" class="form-control typeahead input-cari-jabatan required" placeholder="contoh : Ketua" autocomplete="off">
                         <input type="hidden" name="penugas" class="input-penugas">
                         <div class="text-danger"></div>
                     </div>
-                    <div class="form-group col-4">
+                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
                         <label for="input-cari-pegawai" class="control-label">Hari/Tanggal Kegiatan</label>
                         <input type="text" name="tgl_kegiatan" class="form-control input-tanggal-kegiatan input-daterange-datepicker required" placeholder="Waktu Kegiatan" autocomplete="off">
                         <div class="text-danger"></div>
                     </div>
-                    <div class="form-group col-4">
+                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
                         <label for="input-cari-pegawai" class="control-label">Pukul</label>
                         <input type="text" name="pukul" class="form-control input-pukul-kegiatan required" placeholder="Waktu Kegiatan" autocomplete="off">
                         <div class="text-danger"></div>
@@ -71,29 +71,29 @@
                     </div>  
                     <div class="form-group col-12">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-lg-2 col-md-2 col-sm-6">
                                 <input type="radio" name="dipa_status" class="control-label radio-dipa dipa" value="1" checked> 
                                 <label for="" class="control-label span-dipa">DIPA</label>
                             </div>
-                            <div class="col-2">
+                            <div class="col-lg-2 col-md-2 col-sm-6">
                                 <input type="radio" name="dipa_status" class="control-label radio-dipa non-dipa" value="0"> 
                                 <label for="" class="control-label span-dipa">NON DIPA</label>
                             </div>
                         </div>
                     </div>                  
-                    <div class="form-group col-6 list-dipa">
+                    <div class="form-group list-dipa col-lg-6 col-md-6 col-sm-12">
                         <label for="" class="control-label">Dipa (Satuan Kerja)</label>
                         <div class="row col-12">
                             <select class="select2 form-control input-dipa" name="dipa">
                                 <?php foreach ($data['dipa'] as $key ) { ?>
-                                <option value="<?=$key?>"><?=$key?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                <option value="<?=$key?>"><?=$key?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                                 <?php } ?>
                             </select> 
                         </div>                 
                         <div class="text-danger"></div>
                     </div>
 
-                    <div class="form-group col-6 list-dipa">
+                    <div class="form-group list-dipa col-lg-6 col-md-6 col-sm-12">
                         <label for="" class="control-label">Tahun Anggaran</label>
                         <div class="input-group">
                             <input type="text" name="tahun" class="form-control input-tahun datepicker-year" placeholder="Tahun" autocomplete="off" readonly>
@@ -105,29 +105,29 @@
                     </div>
                     <div class="col-12"><hr></div>
                     <div class="col-12 text-right">
-                    <button type="button" class="form-control col-3 btn btn-outline-success btn-tambah-petugas-kegiatan"><i class="ion-plus-circled"></i> Tambah Petugas</button>
+                    <button type="button" class="form-control col-lg-3 col-md-3 col-sm-12 btn btn-outline-success btn-tambah-petugas-kegiatan"><i class="ion-plus-circled"></i> Tambah Petugas</button>
                     </div>
                     <div class="col-12 list-petugas">
                         <div class="row petugas">
-                            <div class="form-group col-5">
+                            <div class="form-group col-lg-5 col-md-5 col-sm-12">
                                 <label for="" class="control-label">Petugas 1</label>
                                 <input type="text" name="nama[]" class="form-control typehead input-nama input-cari-pegawai required" autocomplete="off">
                                 <div class="text-danger"></div>
                             </div>
-                            <div class="form-group col-6">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                 <label for="" class="control-label">Jabatan 1</label>
                                 <input type="text" name="jabatan[]" class="form-control input-jabatan required" autocomplete="off">
                                 <input type="hidden" name="nip[]" class="form-control input-nip">
                                 <input type="hidden" name="pangkat[]" class="form-control input-pangkat">
                                 <div class="text-danger"></div>
                             </div>
-                            <div class="form-group col-1 p-pt-20">
+                            <div class="form-group col-lg-5 col-md-5 col-sm-12 p-pt-20">
                                 <label for="" class="control-label text-white">-</label>                               
                             </div>
                         </div>
                     </div>
                     <div class="col-12"><hr></div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
                         <label for="" class="control-label">Ditetapkan Pada Tanggal</label>
                         <div class="input-group">
                             <input type="text" name="tgl" class="form-control input-tgl datepicker-autoclose required" placeholder="dd/mm/yyyy" autocomplete="off" readonly>
@@ -137,7 +137,7 @@
                         </div>
                         <div class="text-danger"></div>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
                         <label for="" class="control-label">Mengetahui</label>
                         <div class="input-group">
                             <input type="text" class="form-control typehead input-cari-ttd" placeholder="Mengetahui" readonly>

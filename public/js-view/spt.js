@@ -3,19 +3,19 @@
         var html = ""
         html += `
         <div class="row petugas">
-            <div class="form-group col-5">
+            <div class="form-group col-lg-5 col-md-5 col-sm-12">
                 <label for="" class="control-label">Petugas ${i}</label>
                 <input type="text" name="nama[]" class="form-control typehead input-nama input-cari-pegawai required" autocomplete="off">
                 <div class="text-danger"></div>
             </div>
-            <div class="form-group col-6">
+            <div class="form-group col-lg-6 col-md-6 col-sm-12">
                 <label for="" class="control-label">Jabatan ${i}</label>
                 <input type="text" name="jabatan[]" class="form-control input-jabatan required" autocomplete="off">
                 <input type="hidden" name="nip[]" class="form-control input-nip">
                 <input type="hidden" name="pangkat[]" class="form-control input-pangkat">
                 <div class="text-danger"></div>
             </div>
-            <div class="form-group col-1 p-pt-20">
+            <div class="form-group col-lg-1 col-md-1 col-sm-12 p-pt-20">
                 <label for="" class="control-label text-white">-</label>
                 <button type="button" class="form-control btn btn-outline-danger btn-hapus-petugas-kegiatan"><i class="ion-close-circled"></i></button>
             </div>
@@ -28,17 +28,17 @@
         var html = ""
         html += `
         <div class="row tahap">
-            <div class="form-group col-5">
+            <div class="form-group col-lg-5 col-md-5 col-sm-12">
                 <label for="" class="control-label">Tahap ${i}</label>
                 <input type="text" name="tahap[]" class="form-control input-tahap" autocomplete="off">
                 <div class="text-danger"></div>
             </div>
-            <div class="form-group col-5">
+            <div class="form-group col-lg-5 col-md-5 col-sm-12">
                 <label for="" class="control-label">Tempat ${i}</label>
                 <input type="text" name="tempat[]" class="form-control input-tempat" autocomplete="off">
                 <div class="text-danger"></div>
             </div>
-            <div class="form-group col-1 p-pt-20">
+            <div class="form-group col-lg-1 col-md-1 col-sm-12 p-pt-20">
                 <label for="" class="control-label text-white">-</label>  
                 <button type="button" class="form-control btn btn-outline-danger btn-hapus-tahap"><i class="ion-close-circled"></i></button>                             
             </div>
@@ -110,19 +110,19 @@
         var html = ""
         html += `
         <div class="row petugas">
-            <div class="form-group col-5">
+            <div class="form-group col-lg-5 col-md-5 col-sm-12">
                 <label for="" class="control-label">Petugas ${i}</label>
                 <input type="text" name="nama[]" class="form-control typehead input-nama input-cari-pegawai-all" autocomplete="off">
                 <div class="text-danger"></div>
             </div>
-            <div class="form-group col-5">
+            <div class="form-group col-lg-6 col-md-6 col-sm-12">
                 <label for="" class="control-label">Jabatan ${i}</label>
                 <input type="text" name="jabatan[]" class="form-control input-jabatan" autocomplete="off">
                 <input type="hidden" name="nip[]" class="form-control input-nip">
                 <input type="hidden" name="pangkat[]" class="form-control input-pangkat">
                 <div class="text-danger"></div>
             </div>
-            <div class="form-group col-1 p-pt-20">
+            <div class="form-group col-lg-1 col-md-1 col-sm-12 p-pt-20">
                 <label for="" class="control-label text-white">-</label>
                 <button type="button" class="form-control btn btn-outline-danger btn-hapus-petugas-kegiatan"><i class="ion-close-circled"></i></button>
             </div>
@@ -214,8 +214,8 @@
                     $('.input-cari-ttd').val(data['nama'])
                     $('.input-ttd').val(data['id_pegawai'])
                     $('.input-ttd-nama').val(data['nama'])
-                    $('.input-ttd-note').val('Surat Perintah Tugas ini diketahui dan ditandatanganis oleh '+ data['nama']+' sebagai '+data['status']+' Pengadilan Tinggi Agama Bandar Lampung')
-                    $('.text-mengetahui').text('Surat Perintah Tugas ini diketahui dan ditandatanganis oleh '+ data['nama']+' sebagai '+data['status']+' Pengadilan Tinggi Agama Bandar Lampung');
+                    $('.input-ttd-note').val('Surat Perintah Tugas ini diketahui dan ditandatangani oleh '+ data['nama']+' sebagai '+data['status']+' Pengadilan Tinggi Agama Bandar Lampung')
+                    $('.text-mengetahui').text('Surat Perintah Tugas ini diketahui dan ditandatangani oleh '+ data['nama']+' sebagai '+data['status']+' Pengadilan Tinggi Agama Bandar Lampung');
                 });
             }
         })

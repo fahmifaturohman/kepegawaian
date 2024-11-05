@@ -559,12 +559,14 @@ class Spt extends CI_Controller
         #spt diklat
         elseif($result1->spt_tipe == "spt diklat") {
             $result = $this->model->getSptDiklat($id);
+            $nama = explode('.',explode(",",$result->nama)[0]);
+            $nama = strtoupper(end($nama));
             $data = [
                 'nomor' => $result->nomor,
                 'ditetapkan' => $result->ditetapkan,
                 'tgl' => strdateIndo($result->tgl),
                 'penugas' => $result->penugas,
-                'nama' => $result->nama,
+                'nama' => $nama,
                 'nip' => $result->username,
                 'sumber' => $result->sumber,
                 'tgl_sumber' => strdateIndo($result->tgl_sumber),

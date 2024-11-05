@@ -28,7 +28,7 @@ class HomeModel extends CI_Model
 
     public function getSpt() {
         $this->db->from('view_spt');
-        if(isThang() != "") $this->db->where('YEAR(created)', isThang());
+        if(isThang() != "") $this->db->where('YEAR(tgl)', isThang());
         $this->db->where('deleted', 0);
         $this->db->order_by('id_spt', 'DESC');
         $this->db->limit(5);

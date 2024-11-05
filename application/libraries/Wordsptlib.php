@@ -20,7 +20,7 @@ class Wordsptlib
             $detail_array[] = [
                 'petugas' => $key->nama,
                 'petugas_nip' => ($key->nip == "") ? '-':$key->nip,
-                'petugas_pangkat' => ($key->pangkat == "") ? 'PPNPN':$key->pangkat,
+                'petugas_pangkat' => ($key->pangkat == "") ? 'PPNPN':strtoupper(end(explode('(',explode("/",$key->pangkat)[0]))),
                 'petugas_jabatan' => htmlspecialchars($key->jabatan),
                 'no' => $no,
             ];

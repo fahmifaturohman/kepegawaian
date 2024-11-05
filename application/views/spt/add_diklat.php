@@ -38,17 +38,17 @@
                         </div>
                     </div>
                     <div class="col-12"><hr></div>  
-                    <div class="form-group col-6">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
                         <label for="input-cari-pegawai" class="control-label">Berdasarkan Surat</label>                        
                             <input type="text" name="berdasarkan" class="form-control input-berdasarkan required" placeholder="Berdasarkan" autocomplete="off">
                         <div class="text-danger"></div>
                     </div>
-                    <div class="form-group col-3">
+                    <div class="form-group col-lg-3 col-md-3 col-sm-12">
                         <label for="input-cari-pegawai" class="control-label">Nomor</label>                        
                             <input type="text" name="nomor" class="form-control input-nomor required" placeholder="Nomor" autocomplete="off">
                         <div class="text-danger"></div>
                     </div>
-                    <div class="form-group col-3">
+                    <div class="form-group col-lg-3 col-md-3 col-sm-12">
                         <label for="input-cari-pegawai" class="control-label">Tanggal</label>
                         <input type="text" name="tgl_sumber" class="form-control input-tanggal-sumber datepicker-autoclose required" placeholder="yyyy-mm-dd" autocomplete="off">
                         <div class="text-danger"></div>
@@ -66,50 +66,50 @@
                     </div>
                     <div class="col-12"><hr><label>Menugaskan Saudara :</label></div>
                     <div class="col-12 text-right">
-                    <button type="button" class="form-control col-3 btn btn-outline-success btn-tambah-petugas-kegiatan"><i class="ion-plus-circled"></i> Tambah Petugas</button>
+                    <button type="button" class="form-control col-lg-3 col-md-3 col-sm-12 btn btn-outline-success btn-tambah-petugas-kegiatan"><i class="ion-plus-circled"></i> Tambah Petugas</button>
                     </div>
                     <div class="col-12 list-petugas">
                         <div class="row petugas">
-                            <div class="form-group col-5">
+                            <div class="form-group col-lg-5 col-md-5 col-sm-12">
                                 <label for="" class="control-label">Petugas 1</label>
                                 <input type="text" name="nama[]" class="form-control typehead input-nama input-cari-pegawai-all required" autocomplete="off">
                                 <div class="text-danger"></div>
                             </div>
-                            <div class="form-group col-5">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                 <label for="" class="control-label">Jabatan 1</label>
                                 <input type="text" name="jabatan[]" class="form-control input-jabatan" autocomplete="off">
                                 <input type="hidden" name="nip[]" class="form-control input-nip">
                                 <input type="hidden" name="pangkat[]" class="form-control input-pangkat">
                                 <div class="text-danger"></div>
                             </div>
-                            <div class="form-group col-1 p-pt-20">
+                            <div class="form-group col-lg-1 col-md-1 col-sm-12 p-pt-20">
                                 <label for="" class="control-label text-white">-</label>                               
                             </div>
                         </div>
                     </div>
                     <div class="col-12"><hr></div>
                     <div class="col-12 text-right">
-                    <button type="button" class="form-control col-3 btn btn-outline-success btn-tambah-tahap"><i class="ion-plus-circled"></i> Tahap</button>
+                    <button type="button" class="form-control col-lg-3 col-md-3 col-sm-12 btn btn-outline-success btn-tambah-tahap"><i class="ion-plus-circled"></i> Tahap</button>
                     </div>
                     <div class="col-12 list-tahap">
                         <div class="row tahap">
-                            <div class="form-group col-5">
+                            <div class="form-group col-lg-5 col-md-5 col-sm-12">
                                 <label for="" class="control-label">Tahap 1</label>
                                 <input type="text" name="tahap[]" class="form-control input-tahap required" autocomplete="off">
                                 <div class="text-danger"></div>
                             </div>
-                            <div class="form-group col-5">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                 <label for="" class="control-label">Tempat</label>
                                 <input type="text" name="tempat[]" class="form-control input-tempat required" autocomplete="off">
                                 <div class="text-danger"></div>
                             </div>
-                            <div class="form-group col-1 p-pt-20">
+                            <div class="form-group col-lg-1 col-md-1 col-sm-12 p-pt-20">
                                 <label for="" class="control-label text-white">-</label>                               
                             </div>
                         </div>
                     </div>
                     <div class="col-12"><hr></div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
                         <label for="" class="control-label">Ditetapkan Pada Tanggal</label>
                         <div class="input-group">
                             <input type="text" name="tgl" class="form-control input-tgl datepicker-autoclose required" placeholder="dd/mm/yyyy" autocomplete="off" readonly>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="text-danger"></div>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
                         <label for="" class="control-label">Mengetahui</label>
                         <div class="input-group">
                             <input type="text" class="form-control typehead input-cari-ttd" placeholder="Mengetahui" readonly>
