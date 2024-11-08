@@ -15,6 +15,7 @@ class Pegawai extends CI_Controller
         $this->page = "pegawai";
         $this->load->model("PegawaiModel", "model");
         $this->load->model("PegawaiSipecutModel", "model1");
+        $this->load->model("PegawaiSipecutV1Model", "model2");
         $this->load->model("PegawaiSigerModel", 'modelsiger');
         $this->load->model("DataTable", "dataTable");
         $this->load->model("DataTable3", "dataTable3");
@@ -44,6 +45,10 @@ class Pegawai extends CI_Controller
     }
 
     public function perbarui() {
+        self::perbarui_v1();
+    }
+
+    public function perbarui_v2() {
         $satker = $this->instansi;
         $pegawai = $this->apisipecut->apiPegawai($satker);
         $res = json_decode($pegawai);
@@ -76,6 +81,63 @@ class Pegawai extends CI_Controller
         echo json_encode(['status' => 201, 'success' => true, 'msg' => 'berhasil memperbarui '.count($arr). ' data']);
     }
 
+    public function perbarui_v1() {
+        $satker = "PTA Bandar Lampung";
+        $pegawai = $this->model2->getAll($satker);
+        $arr = [];
+        $array_pangkat = [
+            'i/a' => 'Juru Muda', 'i/b'=> 'Juru Muda Tingkat I', 'i/c'=> 'Juru','i/d'=> 'Juru Tingkat I', 
+            'ii/a' => 'Pengatur Muda', 'ii/b'=> 'Pengatur Muda Tingkat I', 'ii/c'=> 'Pengatur','ii/d'=> 'Pengatur Tingkat I', 
+            'iii/a' => 'Penata Muda', 'iii/b'=> 'Penata Muda Tingkat I', 'iii/c'=> 'Penata','iii/d'=> 'Penata Tingkat I', 
+            'iv/a' => 'Pembina', 'iv/b'=> 'Pembina Tingkat I', 'iv/c'=> 'Pembina Utama Muda','iv/d'=> 'Pembina Utama Madya', 'iv/e'=> 'Pembina Utama', 
+        ];
+        foreach ($pegawai as $key) {
+            if ($key->golongan == "-" || strtolower($key->golongan) == "it" || strlen($key->nip) < 18) { continue; }
+            $exp = explode(" ", $key->unit_kerja);
+            if($exp[0] == "PA") { $str1 = "PA"; $str2 = "Pengadilan Agama";} 
+            else { $str1 = "PTA"; $str2 = "Pengadilan Tinggi Agama"; }
+            
+            $gol = str_replace(" ","", strtolower($key->golongan));
+            $gol = str_replace(")","", str_replace("(","", strtolower($gol))); 
+            
+            if (!array_key_exists($gol,$array_pangkat)) { 
+                $nama_golongan = "";
+                $gol = $key->golongan;
+             }
+            else {
+                $nama_golongan = $array_pangkat[$gol];
+                $exp2 = explode("/",$gol);
+                $gol = strtoupper($exp2[0]).'/'.$exp2[1];
+            }
+           
+            
+            $data = [
+                'id_pegawai' => $key->id,
+                'username' => $key->username,
+                'password' => md5($key->nip),
+                'nip' => $key->nip,
+                'nama' => $key->nama,
+                'email' => "",
+                'jabatan' => $key->jabatan,
+                'tgl_lahir' => $key->tgl_lahir,
+                'kode_satker' => "",
+                'nama_satker' => str_replace($str1,$str2,$key->unit_kerja),
+                'id_jabatan' => "",
+                'id_posisi_jabatan' => "",
+                'golongan' => $gol,
+                'nama_golongan' => $nama_golongan,
+                'email_pegawai' => "",
+                'no_hp' => $key->no_hp,
+                'foto' => "",
+                'nama_posisi_jabatan' => $key->jabatan,
+                'active' => $key->status,
+            ];
+            $row = $this->model->updateOrCreate($data);
+            $arr[] = $row;
+        }
+        echo json_encode(['status' => 201, 'success' => true, 'msg' => 'berhasil memperbarui '.count($arr). ' data']);
+    }
+    
     public function perbarui_by_siger() {
         $satker = $this->instansi;
         $pegawai = $this->modelsiger->getAll($satker);

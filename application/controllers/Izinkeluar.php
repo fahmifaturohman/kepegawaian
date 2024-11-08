@@ -202,6 +202,8 @@ class IzinKeluar extends CI_Controller
     public function print($id) {
         $id_izin = htmlspecialchars($id);
         $result = $this->model->getRow($id_izin);
+        $exp = explode(" ", $result->pangkat); 
+        $pangkat = end($exp); 
         $arrData = [
             'kepada' => $result->kepada,
             'nama' => $result->nama,
@@ -214,7 +216,8 @@ class IzinKeluar extends CI_Controller
             'unit_kerja' => $result->unit_kerja,
             'ttd_nama' => $result->ttd_nama,
             'ttd_nip' => $result->ttd_nip,
-            'tgl_mengetahui' => strdateIndo($result->tgl_mengetahui)
+            'tgl_mengetahui' => strdateIndo($result->tgl_mengetahui),
+            'pangkat' => $pangkat,
         ];
 
 
