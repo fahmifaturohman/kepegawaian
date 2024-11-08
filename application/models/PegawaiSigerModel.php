@@ -40,7 +40,6 @@ class PegawaiSigerModel extends CI_Model
     public function getAll($satker) {
         $this->db3->from($this->_table);
         $this->db3->select('*');
-        $this->db3->where(['active' => 1]);
         if($satker != "") $this->db3->where('nama_satker', $satker);
         $this->db3->where_not_in('jabatan', 'PPNPN');
         $query = $this->db3->get(); 
