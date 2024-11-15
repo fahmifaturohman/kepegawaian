@@ -176,8 +176,8 @@ class Spt extends CI_Controller
                 'ttd_mengetahui' =>  $ketua->status.' Pengadilan Tinggi Agama Bandar Lampung',
                 'ttd_nama' => $ketua->nama,
                 'ttd_nip' => $ketua->nip,
-                'ppk_nama' => $ppk->nama,
-                'ppk_nip' => $ppk->nip,
+                'ppk_nama' => (($ppk->nama) == null) ? '-':$ppk->nama,
+                'ppk_nip' => (($ppk->nip) == null) ? '-':$ppk->nip,
             ];
             $this->model->insertSppd($param_sppd);
 
@@ -614,8 +614,8 @@ class Spt extends CI_Controller
                 'ttd_mengetahui' =>  $ketua->status.' Pengadilan Tinggi Agama Bandar Lampung',
                 'ttd_nama' => $ketua->nama,
                 'ttd_nip' => $ketua->nip,
-                'ppk_nama' => $ppk->nama,
-                'ppk_nip' => $ppk->nip,
+                'ppk_nama' => (($ppk->nama) == null) ? '-':$ppk->nama,
+                'ppk_nip' => (($ppk->nip) == null) ? '-':$ppk->nip,
             ];
             $res = $this->model->insertSppd($param_sppd);
             if($res) {

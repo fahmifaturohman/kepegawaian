@@ -107,7 +107,7 @@
                         <div class="form-group col-6">
                             <label>Dari</label>
                             <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
-                                <input type="text" name="dari" class="form-control input-dari" value="08:30">
+                                <input type="text" name="dari" class="form-control input-dari" value="08:30" readonly>
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="zmdi zmdi-time"></i></span>
                                 </div>
@@ -115,11 +115,14 @@
                         </div>
                         <div class="form-group col-6">
                             <label>Sampai</label>
-                            <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
+                            <!-- <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
                                 <input type="text" name="sampai" class="form-control input-sampai" value="16.00">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="zmdi zmdi-time"></i></span>
                                 </div>
+                            </div> -->
+                            <div class="input-group m-b-20">
+                                <input type="text" name="sampai" class="form-control" placeholder="Ex: 16.00 atau Selesai" autocomplete="off">
                             </div>
                         </div>
                         
@@ -331,7 +334,7 @@
             <div class="form-group col-6">
                 <label>Dari</label>
                 <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
-                    <input type="text" name="dari" class="form-control input-dari input-clock-edit"  value="${data['dari']}">
+                    <input type="text" name="dari" class="form-control input-dari input-clock-edit"  value="${data['dari']}" readonly>
                     <div class="input-group-append">
                         <span class="input-group-text"><i class="zmdi zmdi-time"></i></span>
                     </div>
@@ -339,12 +342,7 @@
             </div>
             <div class="form-group col-6">
                 <label>Sampai</label>
-                <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
-                    <input type="text" name="sampai" class="form-control input-sampai input-clock-edit"  value="${data['sampai']}">
-                    <div class="input-group-append">
-                        <span class="input-group-text"><i class="zmdi zmdi-time"></i></span>
-                    </div>
-                </div>
+                <input type="text" name="sampai" class="form-control"  value="${data['sampai']}" autocomplete="off">
             </div>
             
             <div class="form-group col-12">

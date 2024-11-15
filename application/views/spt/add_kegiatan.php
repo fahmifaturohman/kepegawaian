@@ -51,7 +51,13 @@
                     </div>
                     <div class="form-group col-lg-4 col-md-4 col-sm-12">
                         <label for="input-cari-pegawai" class="control-label">Pukul</label>
-                        <input type="text" name="pukul" class="form-control input-pukul-kegiatan required" placeholder="Waktu Kegiatan" autocomplete="off">
+                            <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
+                                <input type="text" name="pukul" class="form-control input-pukul-kegiatan required" value="08.30" autocomplete="off">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="zmdi zmdi-time"></i></span>
+                                </div>
+                            </div>
+                        <!-- <input type="text" name="pukul" class="form-control input-pukul-kegiatan required" placeholder="Waktu Kegiatan" autocomplete="off"> -->
                         <div class="text-danger"></div>
                     </div>   
                     <div class="form-group col-12">

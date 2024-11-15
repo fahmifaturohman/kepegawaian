@@ -49,7 +49,13 @@
                                     </div>      
                                     <div class="form-group col-lg-4 col-md-4 col-sm-12">
                                         <label for="input-cari-pegawai" class="control-label">Pukul</label>
+                                        <div class="input-group clockpicker m-b-20" data-placement="top" data-align="top" data-autoclose="true">
                                         <input type="text" name="pukul" value="<?=$data['data']->pukul?>" class="form-control input-pukul-kegiatan required" placeholder="Waktu Kegiatan" autocomplete="off">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="zmdi zmdi-time"></i></span>
+                                            </div>
+                                        </div>
+                                        <!-- <input type="text" name="pukul" value="<?=$data['data']->pukul?>" class="form-control input-pukul-kegiatan required" placeholder="Waktu Kegiatan" autocomplete="off"> -->
                                         <div class="text-danger"></div>
                                     </div>    
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
@@ -124,7 +130,7 @@
                                                 <div class="text-danger"></div>
                                             </div>
                                             <div class="form-group col-md-3 col-sm-12">
-                                                <label for="" class="control-label">Pangkat12</label>   
+                                                <label for="" class="control-label">Pangkat</label>   
                                                 <input type="text" name="pangkat[]" class="form-control input-pangkat" value="<?=$key->pangkat?>">
                                                 <div class="text-danger"></div>
                                             </div>
