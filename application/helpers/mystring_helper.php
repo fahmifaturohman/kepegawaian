@@ -139,3 +139,8 @@ function timerangeIndo($date) {
     $str = $dari.' s.d '.$sampai;
     return $str;
 }
+
+function golongan_help($pangkat) {
+    preg_match('/\((.*?)\)/', $pangkat, $golongan);
+    return end($golongan);
+}

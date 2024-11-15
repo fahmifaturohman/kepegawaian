@@ -204,13 +204,14 @@ class IzinKeluar extends CI_Controller
         $result = $this->model->getRow($id_izin);
         $exp = explode(" ", $result->pangkat); 
         $pangkat = end($exp); 
+        $sampai = (strtolower($result->sampai) == "selesai") ? ucfirst($result->sampai):$result->sampai.' WIB';
         $arrData = [
             'kepada' => $result->kepada,
             'nama' => $result->nama,
             'nip' => $result->nip,
             'jabatan' => $result->jabatan,
             'dari' => $result->dari,
-            'sampai' => $result->sampai,
+            'sampai' => $sampai,
             'keperluan' => $result->keperluan,
             'ditetapkan' => $result->ditetapkan,
             'unit_kerja' => $result->unit_kerja,
@@ -218,6 +219,7 @@ class IzinKeluar extends CI_Controller
             'ttd_nip' => $result->ttd_nip,
             'tgl_mengetahui' => strdateIndo($result->tgl_mengetahui),
             'pangkat' => $pangkat,
+            'satker' => NAMA_INSTANSI
         ];
 
 

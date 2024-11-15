@@ -6,6 +6,7 @@
 
 class Wordsptlib
 {
+    
         
     function spt($data) {
         require_once 'vendor/autoload.php';
@@ -19,8 +20,8 @@ class Wordsptlib
         foreach ($data['detail'] as $key) {
             $detail_array[] = [
                 'petugas' => $key->nama,
-                'petugas_nip' => ($key->nip == "") ? '-':$key->nip,
-                'petugas_pangkat' => ($key->pangkat == "") ? 'PPNPN':strtoupper(end(explode('(',explode("/",$key->pangkat)[0]))),
+                'petugas_nip' => ($key->nip == "" || $key->nip == "-") ? '-':$key->nip,
+                'petugas_pangkat' => ($key->pangkat == "PPNPN" || $key->pangkat == "-" || $key->pangkat == "") ? 'PPNPN':golongan_help($key->pangkat),
                 'petugas_jabatan' => htmlspecialchars($key->jabatan),
                 'no' => $no,
             ];
