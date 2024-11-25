@@ -6,7 +6,7 @@
         <a href="<?=base_url()?>" class="logo">
             <!-- <i class="zmdi zmdi-mail-send icon-c-logo"></i> -->
             <img src="<?=dirImage("app-logo1.png")?>" alt="pta bandar lampung" width="42">
-            <span style="color:purple">KEPEGWAIAN</span></a>           
+            <span style="color:purple">KEPEGAWAIAN</span></a>           
     </div>
 
     <nav class="navbar-custom" style="background-image: linear-gradient(to right, #0d0255, #270157, #380158, #460359, #53075a);">

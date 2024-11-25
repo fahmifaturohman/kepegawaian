@@ -75,11 +75,17 @@ class SptModel extends CI_Model
     }
 
     public function get_spt_dasar_menimbang($id) {
-        return $this->db->get_where('spt_dasar_menimbang', ['id_spt' => $id])->result();
+        $this->db->from('spt_dasar_menimbang');
+        $this->db->where(['id_spt' => $id]);
+        $this->db->order_by('id', 'DESC');
+        return $this->db->get()->result();
     }
 
     public function get_spt_dasar_hukum($id) {
-        return $this->db->get_where('spt_dasar_hukum', ['id_spt' => $id])->result();
+        $this->db->from('spt_dasar_hukum');
+        $this->db->where(['id_spt' => $id]);
+        $this->db->order_by('id', 'DESC');
+        return $this->db->get()->result();
     }
 
 

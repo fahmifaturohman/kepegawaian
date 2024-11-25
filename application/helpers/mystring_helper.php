@@ -144,3 +144,11 @@ function golongan_help($pangkat) {
     preg_match('/\((.*?)\)/', $pangkat, $golongan);
     return end($golongan);
 }
+
+
+function mengetahui_help($ttd) {
+    $pattern = "/\b(Dra\.|Drs\.|Dr\.|Ir\.)\s*/i";
+    $nama = explode(",", $ttd);
+    $output = preg_replace($pattern, '', $nama[0]);
+    return $output;
+}
