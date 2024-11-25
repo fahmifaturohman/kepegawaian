@@ -20,7 +20,7 @@ class Wordsptlib
         foreach ($data['detail'] as $key) {
             $detail_array[] = [
                 'petugas' => $key->nama,
-                'petugas_nip' => ($key->nip == "" || $key->nip == "-") ? '-':$key->nip,
+                'petugas_nip' => ($key->nip == "" || $key->nip == "-") ? '':$key->nip,
                 'petugas_pangkat' => ($key->pangkat == "PPNPN" || $key->pangkat == "-" || $key->pangkat == "") ? 'PPNPN':golongan_help($key->pangkat),
                 'petugas_jabatan' => htmlspecialchars($key->jabatan),
                 'no' => $no,
@@ -46,7 +46,7 @@ class Wordsptlib
 
         #jika ada menimbang
         if(count($data['dasar_menimbang']) > 1) { $sort_menimbang = ['a.','b.','c.','d.','e.','f.','g.','h.','i.','j.']; } else { $sort_menimbang = [""];}
-        if(array_reverse($data['dasar_menimbang']) != "") {
+        if($data['dasar_menimbang'] != "") {
             $menimbang = [];
             $no = 0;
             foreach ($data['dasar_menimbang'] as $men) {
@@ -59,7 +59,7 @@ class Wordsptlib
         }
 
         #jika ada dasar hukum
-        if(array_reverse($data['dasar_hukum']) != "") {
+        if($data['dasar_hukum'] != "") {
             $hukum = [];
             $no = 1;
             foreach ($data['dasar_hukum'] as $huk) {

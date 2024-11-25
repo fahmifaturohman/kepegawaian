@@ -483,7 +483,6 @@ class Spt extends CI_Controller
     }
     /* close update */
 
-
     public function report($id) {
         $result1 = $this->model->get_spt_id($id);
         $detail = $this->model->get_spt_detail($id);
@@ -494,14 +493,12 @@ class Spt extends CI_Controller
         #spt kegiatan
         if($result1->spt_tipe == "spt kegiatan") {
             $result = $this->model->getSptKegiatan($id);
-            $nama = explode('.',explode(",",$result->nama)[0]);
-            $nama = strtoupper(end($nama));
             $data = [
                 'nomor' => $result->nomor,
                 'ditetapkan' => $result->ditetapkan,
                 'tgl' => strdateIndo($result->tgl),
                 'penugas' => $result->penugas,
-                'nama' => $nama,
+                'nama' => mengetahui_help($result->nama),
                 'nip' => $result->username,
                 'kegiatan' => $result->kegiatan,
                 'tgl_kegiatan' => $result->tgl_kegiatan,
@@ -529,14 +526,12 @@ class Spt extends CI_Controller
         #spt plh
         elseif($result1->spt_tipe == "spt plh") {
             $result = $this->model->getSptPlh($id);
-            $nama = explode('.',explode(",",$result->nama)[0]);
-            $nama = strtoupper(end($nama));
             $data = [
                 'nomor' => $result->nomor,
                 'ditetapkan' => $result->ditetapkan,
                 'tgl' => strdateIndo($result->tgl),
                 'penugas' => $result->penugas,
-                'nama' => $nama,
+                'nama' => mengetahui_help($result->nama),
                 'nip' => $result->username,
                 'plh' => $result->plh,
                 'waktu' =>$result->waktu,
@@ -554,24 +549,21 @@ class Spt extends CI_Controller
             ];
             $this->wordsptlib->spt($data);
         }
-
-        
         #spt diklat
         elseif($result1->spt_tipe == "spt diklat") {
             $result = $this->model->getSptDiklat($id);
-            $nama = explode('.',explode(",",$result->nama)[0]);
-            $nama = strtoupper(end($nama));
             $data = [
                 'nomor' => $result->nomor,
                 'ditetapkan' => $result->ditetapkan,
                 'tgl' => strdateIndo($result->tgl),
                 'penugas' => $result->penugas,
-                'nama' => $nama,
+                'nama' => mengetahui_help($result->nama),
                 'nip' => $result->username,
                 'sumber' => $result->sumber,
                 'tgl_sumber' => strdateIndo($result->tgl_sumber),
                 'perihal_sumber' => $result->perihal_sumber,
             ];
+                        
             #diklat detail
             $diklat_detail = $this->model->getSptDiklatDetail($result->id_spt_diklat);
             $data = [
