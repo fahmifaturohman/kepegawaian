@@ -66,7 +66,7 @@
 	<div class="form-container sign-in-container">
 		<form id="form-login" method="POST">
 			<!-- <h1>Sign in</h1> -->
-			<img  class="img-logo" src="<?=dirImage('app-logo2.png')?>" alt="" width="200">
+			<img  class="img-logo" src="<?=dirImage('app-logo-only.png')?>" alt="" width="100">
 			<!-- <div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
@@ -85,8 +85,9 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-right">
-				<h1>KEPEGAWAIAN</h1>
-				<p>Aplikasi Kepegawaian Pengadilan Tinggi Agama Bandar Lampung</p>
+				<h1>E-TOP</h1>
+				<p>ELECTRONIC TASK ORDER AND PERMISSION</p>
+                <span>Aplikasi yang digunakan untuk penunjukan dan pembuatan surat tugas dan izin keluar kantor Pegawai Pengadilan Tinggi Agama Bandar Lampung</span>
 			</div>
 		</div>
 	</div>

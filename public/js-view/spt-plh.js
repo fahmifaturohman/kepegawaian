@@ -1,3 +1,30 @@
+//menimbang
+function menimbang() {
+        var html = ""
+        html += `<div class="row menimbang" style="padding-bottom: 10px;">
+                    <div class="input-group col-md-12">
+                        <textarea name="menimbang[]" class="form-control input-menimbang" cols="30" rows="2"></textarea>
+                        <div class="input-group-append">
+                        <span class="input-group-text btn-span-hapus btn-hapus-menimbang" id="basic-addon2">Hapus</span>
+                        </div>
+                    </div>
+                </div>`
+    return html
+}
+//dasar hukum
+function dasar() {
+    var html = ""
+        html += `<div class="row dasar" style="padding-bottom: 10px;">
+                    <div class="input-group col-md-12">
+                        <textarea name="dasar[]" class="form-control input-dasar" cols="30" rows="2"></textarea>
+                        <div class="input-group-append">
+                        <span class="input-group-text btn-span-hapus btn-hapus-dasar" id="basic-addon2">Hapus</span>
+                        </div>
+                    </div>
+                </div>`
+        return html
+} 
+
 function petugas(i = null) {
     var html = ""
     html += `
@@ -219,5 +246,27 @@ $(document).ready(function() {
         })
 
         if(valid) postAjax("spt/edit_spt_plh", "#form-edit")
+    })
+
+
+    $(document).on("click", ".btn-add-menimbang-kegiatan", function(e) {
+        e.preventDefault()
+        var html = menimbang()
+        modalplh.find('.list-menimbang').prepend(html)
+    })
+    $(document).on("click", ".btn-add-dasar-kegiatan", function(e) {
+        e.preventDefault()
+        var html = dasar()
+        modalplh.find('.list-dasar').prepend(html)
+    })
+    $(document).on("click", ".btn-hapus-menimbang", function(e) {
+        let id = $(this).attr('data-id')
+        if(id !== undefined) { $('#form-edit').find('.list-menimbang-hapus').append(`<input type="hidden" name="menimbang_id_hapus[]" value="${id}">`) }
+        $(this).closest('.menimbang').remove()
+    })
+    $(document).on("click", ".btn-hapus-dasar", function(e) {
+        let id = $(this).attr('data-id')
+        if(id !== undefined) { $('#form-edit').find('.list-hukum-hapus').append(`<input type="hidden" name="hukum_id_hapus[]" value="${id}">`) }
+        $(this).closest('.dasar').remove()
     })
 })

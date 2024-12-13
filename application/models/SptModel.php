@@ -170,6 +170,17 @@ class SptModel extends CI_Model
         $this->db->update('spt_sppd', $param);
         return $this->db->affected_rows();
     }
+    
+    public function updateDasarMenimbang($id, $param) {
+        $this->db->where('id', $id);
+        $this->db->update('spt_dasar_menimbang', $param);
+        return $this->db->affected_rows();
+    }
+    public function updateDasarHukum($id, $param) {
+        $this->db->where('id', $id);
+        $this->db->update('spt_dasar_hukum', $param);
+        return $this->db->affected_rows();
+    }
 
    
 
@@ -202,6 +213,18 @@ class SptModel extends CI_Model
     public function deletePermanentSppd($id) {
         $this->db->where('id_spt', $id);
         $this->db->delete('spt_sppd');
+        return $this->db->affected_rows();
+    }
+
+    public function deletePermanentMenimbang($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('spt_dasar_menimbang');
+        return $this->db->affected_rows();
+    }
+
+    public function deletePermanentHukum($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('spt_dasar_hukum');
         return $this->db->affected_rows();
     }
  

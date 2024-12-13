@@ -5,11 +5,11 @@
     <div class="topbar-left">
         <a href="<?=base_url()?>" class="logo">
             <!-- <i class="zmdi zmdi-mail-send icon-c-logo"></i> -->
-            <img src="<?=dirImage("app-logo1.png")?>" alt="pta bandar lampung" width="42">
-            <span style="color:purple">KEPEGAWAIAN</span></a>           
+            <img src="<?=dirImage("app-logo-round.png")?>" alt="pta bandar lampung" width="50">
+            <span style="color:purple">E-TOP</span></a>           
     </div>
 
-    <nav class="navbar-custom" style="background-image: linear-gradient(to right, #0d0255, #270157, #380158, #460359, #53075a);">
+    <nav class="navbar-custom" style="background-image: linear-gradient(to right bottom, #051937, #002260, #00278a, #0a26b1, #4c11d4);">
 
         <ul class="list-inline float-right mb-0">
            
@@ -36,7 +36,7 @@
             <li class="list-inline-item dropdown notification-list">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
-                    <?php $gambar_account = ($this->session->userdata(MY_SESSION_DATA)->gambar == NULL) ? dirTemplate().'images/users/avatar-1.jpg':LINK_GAMBAR.$this->session->userdata(MY_SESSION_DATA)->gambar?>
+                    <?php $gambar_account = ($this->session->userdata(MY_SESSION_DATA)->gambar == NULL) ? dirTemplate().'images/users/avatar-0.png':LINK_GAMBAR.$this->session->userdata(MY_SESSION_DATA)->gambar?>
                     <img src="<?=$gambar_account?>" alt="user" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">

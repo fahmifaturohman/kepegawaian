@@ -24,13 +24,61 @@
 
                         <h4 class="header-title m-t-0">Form Edit SPT Kegiatan</h4>
                         <p class="text-muted font-13 m-b-10">
-                           Sialahkan ada lakukan perubahan data SPT Kegiatan
+                           Sialahkan anda lakukan perubahan data SPT Kegiatan
                         </p>
                         <div class="row">
                             <div class="col-12">
                                 <form id ="form-edit" class="form-kegiatan" method="POST">
                                 <div class="row">
                                     <input type="hidden" name="spt_tipe" class="input-spt-tipe" value="spt kegiatan">
+                                    <div class="col-12">
+                                        <label class="form-label">
+                                            <button type="button" class="btn btn-instagram waves-effect waves-light btn-add-menimbang-kegiatan col-sm-12">
+                                            <span class="btn-label"><i class="fa fa-plus"></i> </span> Tambah Menimbang
+                                            </button>
+                                        </label>
+                                        <div class="list-menimbang">
+                                            <?php $no = 1; foreach ($menimbang as $key ) : ?>
+                                            <div class="row menimbang" style="padding-bottom: 10px;">
+                                                <div class="input-group col-md-12">
+                                                    <input type="hidden" name="menimbang_id[]" value="<?=$key->id?>">
+                                                    <textarea name="menimbang[]" class="form-control input-menimbang" cols="30" rows="2"><?=$key->keterangan?></textarea>
+                                                    <?php $count = count($menimbang); if($no != $count) : ?>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text btn-span-hapus btn-hapus-menimbang" id="basic-addon2" data-id="<?=$key->id?>">Hapus</span>
+                                                    </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                            <?php $no++; endforeach; ?>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 list-menimbang-hapus"><hr></div> 
+
+                                    <div class="col-12">
+                                        <label class="form-label">
+                                            <button type="button" class="btn btn-instagram waves-effect waves-light btn-add-dasar-kegiatan">
+                                            <span class="btn-label"><i class="fa fa-plus"></i> </span> Tambah Dasar Hukum
+                                            </button>
+                                        </label>
+                                        <div class="list-dasar">
+                                            <?php $no = 1; foreach ($hukum as $key ) : ?>
+                                            <div class="row dasar" style="padding-bottom: 10px;">
+                                                <div class="input-group col-md-12">
+                                                    <input type="hidden" name="hukum_id[]" value="<?=$key->id?>">
+                                                    <textarea name="dasar[]" class="form-control input-dasar" cols="30" rows="2"><?=$key->keterangan?></textarea>
+                                                    <?php $count = count($hukum); if($no != $count) : ?>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text btn-span-hapus btn-hapus-dasar" id="basic-addon2" data-id="<?=$key->id?>">Hapus</span>
+                                                    </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                            <?php $no++; endforeach; ?>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 list-hukum-hapus"><hr></div> 
+
                                     <div class="form-group col-lg-4 col-md-4 col-sm-12">
                                         <label for="input-cari-pegawai" class="control-label">Pejabat yang memberi tugas :</label>                        
                                         <input type="hidden" name="id_spt" value="<?=$spt->id_spt?>">

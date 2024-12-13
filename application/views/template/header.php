@@ -8,7 +8,7 @@
         <meta name="author" content="Coderthemes">
 
         <!-- App Favicon -->
-        <link rel="shortcut icon" href="<?=dirImage('app-logo1.png')?>">
+        <link rel="shortcut icon" href="<?=dirImage('app-logo-round.png')?>">
 
         <!-- App title -->
         <title>kepegawaian | <?=$page?></title>
