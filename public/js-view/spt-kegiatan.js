@@ -1,4 +1,30 @@
-
+    //menimbang
+    function menimbang() {
+        var html = ""
+        html += `<div class="row menimbang" style="padding-bottom: 10px;">
+                    <div class="input-group col-md-12">
+                        <textarea name="menimbang[]" class="form-control input-menimbang" cols="30" rows="2"></textarea>
+                        <div class="input-group-append">
+                        <span class="input-group-text btn-span-hapus btn-hapus-menimbang" id="basic-addon2">Hapus</span>
+                        </div>
+                    </div>
+                </div>`
+    return html
+    }
+    //dasar hukum
+    function dasar() {
+    var html = ""
+        html += `<div class="row dasar" style="padding-bottom: 10px;">
+                    <div class="input-group col-md-12">
+                        <textarea name="dasar[]" class="form-control input-dasar" cols="30" rows="2"></textarea>
+                        <div class="input-group-append">
+                        <span class="input-group-text btn-span-hapus btn-hapus-dasar" id="basic-addon2">Hapus</span>
+                        </div>
+                    </div>
+                </div>`
+        return html
+    } 
+    
     function petugas(i = null) {
         var html = ""
         html += `
@@ -14,7 +40,7 @@
                 <input type="hidden" name="nip[]" class="form-control input-nip">
                 <div class="text-danger"></div>
             </div>
-            <div class="form-group col-lg-4 col-md-4 col-sm-12">
+            <div class="form-group col-lg-3 col-md-4 col-sm-12">
                 <label for="" class="control-label">Pangkat</label>   
                 <input type="text" name="pangkat[]" class="form-control input-pangkat"">
                 <div class="text-danger"></div>
@@ -368,6 +394,27 @@
         })
 
         $(".input-dipa").select2({
-        maximumSelectionLength: 3
+            maximumSelectionLength: 3
         });
+
+        $(document).on("click", ".btn-add-menimbang-kegiatan", function(e) {
+            e.preventDefault()
+            var html = menimbang()
+            modalKegiatan.find('.list-menimbang').prepend(html)
+        })
+        $(document).on("click", ".btn-add-dasar-kegiatan", function(e) {
+            e.preventDefault()
+            var html = dasar()
+            modalKegiatan.find('.list-dasar').prepend(html)
+        })
+        $(document).on("click", ".btn-hapus-menimbang", function(e) {
+            let id = $(this).attr('data-id')
+            if(id !== undefined) { $('#form-edit').find('.list-menimbang-hapus').append(`<input type="hidden" name="menimbang_id_hapus[]" value="${id}">`) }
+            $(this).closest('.menimbang').remove()
+        })
+        $(document).on("click", ".btn-hapus-dasar", function(e) {
+            let id = $(this).attr('data-id')
+            if(id !== undefined) { $('#form-edit').find('.list-hukum-hapus').append(`<input type="hidden" name="hukum_id_hapus[]" value="${id}">`) }
+            $(this).closest('.dasar').remove()
+        })
     })

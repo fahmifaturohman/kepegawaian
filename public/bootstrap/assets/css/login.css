@@ -81,8 +81,10 @@
 
 		button {
 			border-radius: 20px;
-			border: 1px solid #51075A;
-			background-color: #51075A;
+			/* border: 1px solid #51075A;
+			background-color: #51075A; */
+			background-color: #00278a;
+			border: 1px solid #00278a;
 			color: #FFFFFF;
 			font-size: 12px;
 			font-weight: bold;
@@ -102,7 +104,8 @@
 
         button:hover {
             cursor: pointer;
-            border: 2px solid #51075A;
+            /* border: 2px solid #51075A; */
+			border: 2px solid #00278a;
             background: none;
             color:#555;
         }
@@ -248,7 +251,8 @@
 		.overlay-right {
 			right: 0;
 			transform: translateX(0);
-            background-image: linear-gradient(to right, #0d0255, #270157, #380158, #460359, #53075a);
+			background-image: linear-gradient(to right bottom, #051937, #002260, #00278a, #0a26b1, #4c11d4);
+            /* background-image: linear-gradient(to right, #0d0255, #270157, #380158, #460359, #53075a); */
             /* background: #0050DB !important; */
         }
 
@@ -332,5 +336,10 @@
 				transition: transform 0.6s ease-in-out;
 				z-index: 100;
 				display: none !important;
+			}
+			
+			.img-logo {
+				margin-bottom: 3rem !important;
+				width: 60%;
 			}
 		}

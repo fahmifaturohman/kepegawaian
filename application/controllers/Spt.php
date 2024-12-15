@@ -406,8 +406,90 @@ class Spt extends CI_Controller
             }                   
         }
         return true; 
-    }    
+    }
 
+    private function _updateDasarMenimbang($post, $tipe = "") {
+        $id_spt = $post['id_spt'];
+        $count = count($post['menimbang']);
+        $array_detail = [];
+        for ($i=0; $i < $count; $i++) { 
+            if(!empty($post['menimbang_id'][$i])) {
+                $ket = $post['menimbang'][$i];
+                $id = $post['menimbang_id'][$i];
+                $array = [
+                    'keterangan' => $ket,
+                ];
+                $this->model->updateDasarMenimbang($id, $array);
+                $array_detail[] = $array;
+            }
+            else {
+                $array = [
+                    'id_spt' => $id_spt,
+                    'tipe' => $tipe,
+                    'keterangan' => $post['menimbang'][$i],
+                ];
+                $this->model->insertSptMenimbang($array);
+                $array_detail[] = $array;
+            }                   
+        }
+        return true; 
+    }
+
+    private function _updateDasarHukum($post, $tipe = "") {
+        $id_spt = $post['id_spt'];
+        $count = count($post['dasar']);
+        $array_detail = [];
+        for ($i=0; $i < $count; $i++) { 
+            if(!empty($post['hukum_id'][$i])) {
+                $ket = $post['dasar'][$i];
+                $id = $post['hukum_id'][$i];
+                $array = [
+                    'keterangan' => $ket,
+                ];
+                $this->model->updateDasarHukum($id, $array);
+                $array_detail[] = $array;
+            }
+            else {
+                $array = [
+                    'id_spt' => $id_spt,
+                    'tipe' => $tipe,
+                    'keterangan' => $post['dasar'][$i],
+                ];
+                $this->model->insertSptHukum($array);
+                $array_detail[] = $array;
+            }                   
+        }
+        return true; 
+    }
+
+
+
+    private function _deletePermanentDasarMenimbang($post) {
+        if(!empty($post['menimbang_id_hapus'])) {
+            $count = count($post['menimbang_id_hapus']);
+            $array = [];
+            for ($i=0; $i < $count; $i++) { 
+                $id = $post['menimbang_id_hapus'][$i];
+                $array[] = $id;
+                $hapus = $this->model->deletePermanentMenimbang($id);
+            } 
+            return true;
+        } else { return false;}
+    }
+
+    private function _deletePermanentDasarHukum($post) {
+        if(!empty($post['hukum_id_hapus'])) {
+            $count = count($post['hukum_id_hapus']);
+            $array = [];
+            for ($i=0; $i < $count; $i++) { 
+                $id = $post['hukum_id_hapus'][$i];
+                $array[] = $id;
+                $hapus = $this->model->deletePermanentHukum($id);
+            } 
+            return true;
+        } else { return false;}
+    }
+    
     private function _deletePermanentSptDetail($post) {
         if(!empty($post['id_spt_detail_hapus'])) {
             $count = count($post['id_spt_detail_hapus']);
@@ -488,7 +570,6 @@ class Spt extends CI_Controller
         $detail = $this->model->get_spt_detail($id);
         $dasar_hukum = $this->model->get_spt_dasar_hukum($id);
         $dasar_menimbang = $this->model->get_spt_dasar_menimbang($id);
-
 
         #spt kegiatan
         if($result1->spt_tipe == "spt kegiatan") {
@@ -634,7 +715,12 @@ class Spt extends CI_Controller
                 $post = $this->input->post();
                 self::_updateSpt($post);
                 self::_updateSptDetail($post);                   
-                self::_deletePermanentSptDetail($post);                
+                self::_deletePermanentSptDetail($post);
+
+                self::_updateDasarMenimbang($post, "spt kegiatan");
+                self::_deletePermanentDasarMenimbang($post);
+                self::_updateDasarHukum($post, "spt kegiatan");
+                self::_deletePermanentDasarHukum($post);
                 #spt kegiatan tgl_kegiatan_old
                 $id_spt_kegiatan = $post['id_spt_kegiatan'];
                 $param_kegiatan = [ 
@@ -668,9 +754,13 @@ class Spt extends CI_Controller
             $result1 = $this->model->get_spt_id($id);
             $detail = $this->model->get_spt_detail($id);
             $result = $this->model->getSptKegiatan($id);
+            $dasar_hukum = $this->model->get_spt_dasar_hukum($id, "spt kegiatan");
+            $dasar_menimbang = $this->model->get_spt_dasar_menimbang($id, "spt kegiatan");
             $data = [
+                'hukum' => array_reverse($dasar_hukum),
+                'menimbang' => array_reverse($dasar_menimbang),
                 'spt' => $result1,
-                'detail' => $detail,
+                'detail' => array_reverse($detail),
                 'data' => ["data" => $result, "dipa" => $this->static->dipa()],
                 'page' => $this->page,
                 'title' => "Edit SPT Kegiatan",
@@ -691,7 +781,12 @@ class Spt extends CI_Controller
                 $post = $this->input->post();
                 self::_updateSpt($post);
                 self::_updateSptDetail($post);                   
-                self::_deletePermanentSptDetail($post);                
+                self::_deletePermanentSptDetail($post);
+                
+                self::_updateDasarMenimbang($post, "spt plh");
+                self::_deletePermanentDasarMenimbang($post);
+                self::_updateDasarHukum($post, "spt plh");
+                self::_deletePermanentDasarHukum($post);
                 $id_spt_plh = $post['id_spt_plh'];   
                 $param_plh = [
                     'plh' => $post['plh'],
@@ -716,7 +811,11 @@ class Spt extends CI_Controller
             $result1 = $this->model->get_spt_id($id);
             $detail = $this->model->get_spt_detail($id);
             $result = $this->model->getSptPlh($id);
+            $dasar_hukum = $this->model->get_spt_dasar_hukum($id, "spt kegiatan");
+            $dasar_menimbang = $this->model->get_spt_dasar_menimbang($id, "spt kegiatan");
             $data = [
+                'hukum' => array_reverse($dasar_hukum),
+                'menimbang' => array_reverse($dasar_menimbang),
                 'spt' => $result1,
                 'detail' => $detail,
                 'data' => $result,
@@ -744,6 +843,11 @@ class Spt extends CI_Controller
                 self::_updateSptDiklatDetail($post);
                 self::_deletePermanentSptDiklatDetail($post); 
 
+                
+                self::_updateDasarMenimbang($post, "spt plh");
+                self::_deletePermanentDasarMenimbang($post);
+                self::_updateDasarHukum($post, "spt plh");
+                self::_deletePermanentDasarHukum($post);
                 $id_spt_diklat = $post['id_spt_diklat'];   
                 $param_diklat = [
                     'sumber' => $post['berdasarkan'],
@@ -768,7 +872,11 @@ class Spt extends CI_Controller
             $detail = $this->model->get_spt_detail($id);
             $result = $this->model->getSptDiklat($id);
             $tahap = $this->model->getSptDiklatDetail($result->id_spt_diklat);
+            $dasar_hukum = $this->model->get_spt_dasar_hukum($id, "spt kegiatan");
+            $dasar_menimbang = $this->model->get_spt_dasar_menimbang($id, "spt kegiatan");
             $data = [
+                'hukum' => array_reverse($dasar_hukum),
+                'menimbang' => array_reverse($dasar_menimbang),
                 'spt' => $result1,
                 'detail' => $detail,
                 'data' => $result,
