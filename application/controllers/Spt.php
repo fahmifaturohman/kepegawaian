@@ -1,10 +1,4 @@
 <?php
-
-use phpDocumentor\Reflection\Types\Parent_;
-
-use PhpOffice\PhpWord\PhpWord;
-use PhpOffice\PhpWord\Writer\Word2007;
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Spt extends CI_Controller
@@ -23,6 +17,7 @@ class Spt extends CI_Controller
         $this->load->model("StaticModel", "static");
         $this->load->model("DataTable", "dataTable");
         isLogin();
+        $this->authorization->user_admin();
     }
 
     public function index() 
@@ -34,6 +29,7 @@ class Spt extends CI_Controller
             'js' => ["spt"],
         ];
         templateView("spt/spt", $data);
+        // echo json_encode($this->authorization->user_author());
     }
 
     public function table() {

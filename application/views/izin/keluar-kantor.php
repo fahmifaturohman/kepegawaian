@@ -122,7 +122,7 @@
                                 </div>
                             </div> -->
                             <div class="input-group m-b-20">
-                                <input type="text" name="sampai" class="form-control" placeholder="Ex: 16.00 atau Selesai" autocomplete="off">
+                                <input type="text" name="sampai" class="form-control input-sampai" placeholder="Ex: 16.00 atau Selesai" autocomplete="off">
                             </div>
                         </div>
                         
@@ -512,6 +512,17 @@
             else error(this, "*wajib diisi")
             success($(this).closest('.petugas').find('.input-jabatan'))
         }).on('blur','.input-cari-pegawai', function() {
+            let val = $(this).val()
+            if(val.length > 0) success(this)
+            else error(this, "*wajib diisi")
+        })
+
+        $(document).on('keyup', '.input-sampai', function() {
+            typeheadPegawai($(this))
+            let val = $(this).val()
+            if(val.length > 0) success(this)
+            else error(this, "*wajib diisi")
+        }).on('blur','.input-sampai', function() {
             let val = $(this).val()
             if(val.length > 0) success(this)
             else error(this, "*wajib diisi")

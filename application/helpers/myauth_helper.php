@@ -22,6 +22,9 @@ function isThangLabel() {
     else return "Tahun ".date('Y');
 }
 
+function isAdmin() {
+    $ci = get_instance();
+}
 
 
 ?>

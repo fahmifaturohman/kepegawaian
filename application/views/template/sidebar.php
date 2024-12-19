@@ -11,6 +11,7 @@
                     <a href="<?=base_url()?>" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i><span> Dashboard </span> </a>
                 </li>
 
+                <?php if($this->authorization->user_author()->level == "Administrator") { ?>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect 
                     <?=$active = ($page == "asaltujuan" || $page == "klasifikasi" || $page == "pimpinan" || $page == "pegawai") ? "subdrop active":"";?>">
@@ -35,6 +36,7 @@
                         <!-- <li class="<?=$active = ($page == "undangan") ? "active":""; ?>"><a href="<?=base_url()?>undangan">Undangan</a></li> -->
                     </ul>
                 </li>
+                <?php } ?>
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect 

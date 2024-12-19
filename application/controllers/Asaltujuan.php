@@ -15,6 +15,7 @@ class Asaltujuan extends CI_Controller
         $this->load->model("AsalTujuanModel", "model");
         $this->load->model("DataTable", "dataTable");
         isLogin();
+        $this->authorization->user_admin();
     }
 
     public function index() 

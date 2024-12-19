@@ -20,6 +20,7 @@ class Pimpinan extends CI_Controller
 
     public function index() 
     {
+        $this->authorization->user_admin();
         $data = [
             'page' => $this->page,
             'title' => "Pimpinan",
@@ -30,6 +31,8 @@ class Pimpinan extends CI_Controller
     }
 
     public function add() {
+        $this->authorization->user_admin();
+
         if ($this->input->server('REQUEST_METHOD') == "POST") { 
             $validation = $this->form_validation;
             $validation->set_rules($this->model->rules());
@@ -73,6 +76,7 @@ class Pimpinan extends CI_Controller
     }
 
     public function edit($id = null) {
+        $this->authorization->user_admin();
         if($this->input->server('REQUEST_METHOD') == "POST") {
             $validation = $this->form_validation;
             $validation->set_rules($this->model->rules());
@@ -125,6 +129,8 @@ class Pimpinan extends CI_Controller
     }
 
     public function delete() {
+        $this->authorization->user_admin();
+
         if($this->input->server('REQUEST_METHOD') == "POST") {
             $row = $this->model->delete();
             if($row > 0) {
@@ -143,6 +149,8 @@ class Pimpinan extends CI_Controller
     }
 
     public function permanentdelete($id = null) {
+        $this->authorization->user_admin();
+
         $row = $this->model->hardDelete($id);
         if($row > 0) {
             $res['success'] = true;
@@ -329,6 +337,8 @@ class Pimpinan extends CI_Controller
     }
   
     public function addnote() {
+        $this->authorization->user_admin();
+
         if($this->input->server('REQUEST_METHOD') == "POST") {
             $row = $this->model->addNote();
             if($row > 0) {
@@ -347,6 +357,8 @@ class Pimpinan extends CI_Controller
     }
 
     public function addpegawai() {
+        $this->authorization->user_admin();
+
         if($this->input->server('REQUEST_METHOD') == "POST") {            
             $post = $this->input->post();
             $namaPegawai = $post['id_pegawai']; 

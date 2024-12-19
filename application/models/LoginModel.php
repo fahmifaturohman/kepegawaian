@@ -35,7 +35,7 @@ class LoginModel extends CI_Model
     }
 
     
-    public function auth_esurat($data) {
+    public function auth($data) {
         $this->db->from($this->_table);
         $this->db->select('`id`, `username`, `level`, `gambar`, gambar, nama, kdeselon, status');
         $this->db->where(['username'  => $data['username'], 'password' => md5($data['password']), 'deleted' => 0]);
@@ -50,6 +50,25 @@ class LoginModel extends CI_Model
         $this->db2->select('a.`id`, a.username, a.`jabatan` level, a.`gambar`,  a.`nama`, a.`kdeselon`, a.`status`');
         $this->db2->join('tbl_user_role b', 'a.role_id = b.role_id','left');
         $this->db2->where(['a.username' => $data['username'], 'a.password' => $password, 'a.unit_kerja' => NAMA_INSTANSI]);
+        $this->db2->limit(1);
+        $query = $this->db2->get();
+        return $query->row();
+    }
+
+    public function row_auth($id) {
+        $this->db->from($this->_table);
+        $this->db->select('`id`, `username`, `level`, `gambar`, gambar, nama, kdeselon, status');
+        $this->db->where(['id'  => $id, 'deleted' => 0]);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function row_auth_sistemcuti($id) {
+        $this->db2->from($this->_table2.' a');
+        $this->db2->select('a.`id`, a.username, a.`jabatan` level, a.`gambar`,  a.`nama`, a.`kdeselon`, a.`status`');
+        $this->db2->join('tbl_user_role b', 'a.role_id = b.role_id','left');
+        $this->db2->where(['a.id' => $id, 'a.unit_kerja' => NAMA_INSTANSI]);
         $this->db2->limit(1);
         $query = $this->db2->get();
         return $query->row();
