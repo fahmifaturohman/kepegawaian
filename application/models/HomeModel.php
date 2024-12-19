@@ -26,6 +26,15 @@ class HomeModel extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function getIzinKeluarKantorUser() {
+        $this->db->from('view_izin_keluar_kantor');
+        if(isThang() != "") $this->db->where('YEAR(created)', isThang());
+        $this->db->where(['deleted' => 0, 'created_by' => $this->session->userdata(MY_SESSION_DATA)->id, 'created_user' => $this->session->userdata(MY_SESSION_BY)]);
+        $this->db->order_by('id_izin', 'DESC');
+        $this->db->limit(5);
+        return $this->db->get()->result();
+    }
+
     public function getSpt() {
         $this->db->from('view_spt');
         if(isThang() != "") $this->db->where('YEAR(tgl)', isThang());

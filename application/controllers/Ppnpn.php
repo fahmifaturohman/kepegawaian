@@ -14,6 +14,7 @@ class Ppnpn extends CI_Controller
         $this->load->model("DataTable", "dataTable");
         $this->load->library('form_validation');
         isLogin();
+        $this->authorization->user_admin();
     }
 
     public function index() 

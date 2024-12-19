@@ -98,7 +98,9 @@ define('CURRENT_YEAR', date('Y'));
 define('CURRENT_DATE', date('Y-m-d H:i:s'));
 define('LIMIT_DISPOSISI_MASUK_KESEKRETARIATAN', 5);
 define('LIMIT_DISPOSISI_MASUK_KEPANITERAAN', 3);
-define('MY_SESSION_DATA', 'kepegawaian_session_data');
-define('MY_SESSION_LOGGED', 'kepegawaian_logged');
-define('MY_SESSION_THANG', 'kepegawaian_thang');
-define('MY_SESSION_THANG_LABEL', 'kepegawaian_thang_label');
+define('MY_SESSION_DATA', 'etop_session_data');
+define('MY_SESSION_LOGGED', 'etop_logged');
+define('MY_SESSION_THANG', 'etop_thang');
+define('MY_SESSION_THANG_LABEL', 'etop_thang_label');
+define('MY_SESSION_BY', 'etop_by');
+

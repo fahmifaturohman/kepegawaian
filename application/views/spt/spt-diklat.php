@@ -8,7 +8,7 @@
                     <div class="page-title-box">
                         <h4 class="page-title float-left">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="#" type="button" class="btn waves-effect waves-light btn-sm btn-purple btn-spt-diklat" data-toggle="modal" data-id="spt diklat"><i class="ion-plus-circled m-r-5"></i> SPT Diklat</a>
+                                <a href="#" type="button" class="btn waves-effect waves-light btn-sm btn-purple btn-spt-diklat" data-toggle="modal" data-id="spt diklat"><i class="ion-plus-circled m-r-5"></i>Tambah SPT Diklat</a>
                             </div>
                         </h4>
                         <ol class="breadcrumb float-right">
@@ -79,7 +79,7 @@
                         str = `<div class="btn-group" role="group" aria-label="Basic example">
                                     <a href="<?=base_url('spt/')?>edit_${text.replace(' ', '_')}/${data['id_spt']}" class="btn waves-effect waves-light btn-sm btn-facebook btn-edit"><i class="ion-compose"></i></a>
                                     <a type="button" class="btn waves-effect waves-light btn-sm btn-youtube btn-delete" data-toggle="modal" data-id="${data['id_spt']}"><i class="ion-trash-a"></i></a>
-                                    <a href="<?=base_url("spt/report/")?>${data['id_spt']}" target ="_blank" class="btn waves-effect waves-light btn-sm btn-primary"><i class="ion-android-printer"></i></a>
+                                    <a href="<?=base_url("spt/report/")?>${data['id_spt']}" target ="_blank" class="btn waves-effect waves-light btn-sm btn-primary"><i class="ion-android-download"></i></a>
                                 </div>`
                         return str    }
                 },

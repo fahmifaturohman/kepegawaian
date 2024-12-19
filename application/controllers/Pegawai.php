@@ -21,6 +21,7 @@ class Pegawai extends CI_Controller
         $this->load->model("DataTable3", "dataTable3");
         $this->instansi = NAMA_INSTANSI;
         isLogin();
+        $this->authorization->user_admin();
     }
 
     public function index() {

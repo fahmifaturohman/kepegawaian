@@ -22,6 +22,7 @@ class Home extends CI_Controller {
 		$plh = $this->model->countSpt("spt plh");
 		$diklat = $this->model->countSpt("spt diklat");
 		$spt =  $this->model->countSptAll();
+		$izin = ($this->authorization->user_author()->level == 'Administrator') ? $this->model->getIzinKeluarKantor():$this->model->getIzinKeluarKantorUser();
 		$data = [
 			'page' => $this->page,
 			'data' => [
@@ -32,7 +33,7 @@ class Home extends CI_Controller {
 				'spt_diklat' => $diklat,
 				'spt_diklat_persen' => round(($diklat == 0) ? '0':($diklat/$spt)*100),
 				'spt' => $spt,
-				'izin' => $this->model->getIzinKeluarKantor(),
+				'izin' => $izin,
 				'dataspt' => $this->model->getSpt(),
 			]
 		];
@@ -43,9 +44,10 @@ class Home extends CI_Controller {
 			'js' => ['pegawai'],
 		];
 		templateView("home/home", $data);
+		#echo json_encode($this->session->userdata(MY_SESSION_BY));
 			
 			
-		}
+	}
 
 
 }

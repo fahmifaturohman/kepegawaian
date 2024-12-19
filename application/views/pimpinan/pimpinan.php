@@ -8,7 +8,7 @@
                     <div class="page-title-box">
                         <h4 class="page-title float-left">
                             <a href="<?=base_url($page)?>/add" class="btn btn-purple waves-effect waves-light btn-sm">
-                            <i class="ion-plus-circled m-r-5"></i> <span>Tambah</span> 
+                            <i class="ion-plus-circled m-r-5"></i> <span>Tambah Pimpinan</span> 
                             </a>
                         </h4>
                         <ol class="breadcrumb float-right">
@@ -42,8 +42,8 @@
                                 <tr>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="<?=base_url("pimpinan/edit/")?><?=$key->id_struktur?>" type="button" class="btn waves-effect waves-light btn-sm btn-primary"><i class="ion-edit"></i></a>
-                                            <a type="button" class="btn waves-effect waves-light btn-sm btn-secondary btn-delete" data-toggle="modal" data-id="<?=$key->id_struktur?>" data-isi ="<?=$key->bagian?>"><i class="ion-trash-a"></i></a>
+                                            <a href="<?=base_url("pimpinan/edit/")?><?=$key->id_struktur?>" type="button" class="btn waves-effect waves-light btn-sm btn-facebook btn-primary"><i class="ion-edit"></i></a>
+                                            <a type="button" class="btn waves-effect waves-light btn-sm btn-danger btn-youtube btn-delete" data-toggle="modal" data-id="<?=$key->id_struktur?>" data-isi ="<?=$key->bagian?>"><i class="ion-trash-a"></i></a>
                                         </div>
                                     </td>
                                     <td><?=$no++;?></td>

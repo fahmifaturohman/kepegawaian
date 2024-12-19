@@ -35,8 +35,13 @@ class IzinKeluar extends CI_Controller
     public function table() {
         $tables = "view_izin_keluar_kantor";
         $search = array('nama','pegawai','jabatan','keperluan','tgl_mengetahui', 'dari', 'sampai', 'ttd_nama');
-        if(isThang() != "") $where = ['deleted' => 0, 'tahun' => $this->thang];
-        else $where = ['deleted' => 0];
+        if($this->authorization->user_author()->level == 'Administrator') {
+            if(isThang() != "") $where = ['deleted' => 0, 'tahun' => $this->thang];
+            else {} $where = ['deleted' => 0];
+        } else {
+            if(isThang() != "") $where = ['deleted' => 0, 'tahun' => $this->thang, 'created_by' => $this->session->userdata(MY_SESSION_DATA)->id, 'created_user' => $this->session->userdata(MY_SESSION_BY)];
+            else {} $where = ['deleted' => 0, 'created_by' => $this->session->userdata(MY_SESSION_DATA)->id, 'created_user' => $this->session->userdata(MY_SESSION_BY)];
+        }
         $isWhere = null;
         header('Content-Type: application/json');
         echo $this->dataTable->get_tables_where($tables, $search, $where, $isWhere);
@@ -63,6 +68,8 @@ class IzinKeluar extends CI_Controller
                             'ttd_pangkat' => $post['ttd-pangkat'],
                             'ttd_golongan' => $post['ttd-golongan'],
                             'ttd_jabatan' => $post['ttd-jabatan'],
+                            'created_by' => $this->session->userdata(MY_SESSION_DATA)->id,
+                            'created_user' => $this->session->userdata(MY_SESSION_BY)
                         ];        
                         #insert to table izin keluar
                         $result = $this->model->insertData($param);

@@ -8,7 +8,7 @@
                     <div class="page-title-box">
                         <h4 class="page-title float-left">
                             <a href="#" class="btn btn-purple waves-effect waves-light btn-sm btn-add" data-toggle="modal">
-                            <i class="ion-plus-circled m-r-5"></i> <span>Tambah</span> 
+                            <i class="ion-plus-circled m-r-5"></i> <span>Tambah Asal/Tujuan SPT</span> 
                             </a>
                         </h4>
                         <ol class="breadcrumb float-right">
@@ -147,8 +147,8 @@
                 { data: function(data,type,dataToSet) {
                         str = `<td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a type="button" class="btn waves-effect waves-light btn-sm btn-primary btn-edit" data-toggle="modal" data-id="${data.id_asal_tujuan}"><i class="ion-edit"></i></a>
-                                        <a type="button" class="btn waves-effect waves-light btn-sm btn-secondary btn-delete" data-toggle="modal" data-id="${data.id_asal_tujuan}" data-isi ="${data.asal_tujuan}"><i class="ion-trash-a"></i></a>
+                                        <a type="button" class="btn waves-effect waves-light btn-sm btn-facebook btn-primary btn-edit" data-toggle="modal" data-id="${data.id_asal_tujuan}"><i class="ion-edit"></i></a>
+                                        <a type="button" class="btn waves-effect waves-light btn-sm btn-youtube btn-delete" data-toggle="modal" data-id="${data.id_asal_tujuan}" data-isi ="${data.asal_tujuan}"><i class="ion-trash-a"></i></a>
                                     </div>
                                 </td>`
                         return str

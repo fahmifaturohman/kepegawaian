@@ -29,14 +29,15 @@ class Login extends CI_Controller
                     'password' => htmlspecialchars($post['password'])
                 ];
 
-                #user e-surat
-                $auth_esurat = $this->model->auth_esurat($param);
-                if($auth_esurat) {
+                #AUTH
+                $auth = $this->model->auth($param);
+                if($auth) {
                     $this->session->set_userdata([
-                        MY_SESSION_DATA => $auth_esurat,
+                        MY_SESSION_DATA => $auth,
                         MY_SESSION_THANG => date('Y'),
                         MY_SESSION_THANG_LABEL => "Tahun ".date('Y'),
-                        MY_SESSION_LOGGED => true
+                        MY_SESSION_LOGGED => true,
+                        MY_SESSION_BY => 'etop'
                     ]);
                     $res['success'] = true;
                     $res['msg'] = "berhasil login";
@@ -51,6 +52,7 @@ class Login extends CI_Controller
                             MY_SESSION_THANG => date('Y'),
                             MY_SESSION_THANG_LABEL => "Tahun ".date('Y'),
                             MY_SESSION_LOGGED => true,
+                            MY_SESSION_BY => 'sipecut'
                         ]);
                         $res['success'] = true;
                         $res['msg'] = "berhasil login";

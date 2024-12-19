@@ -12,6 +12,7 @@ class Undangan extends CI_Controller
         $this->page = "undangan";
         $this->load->model("UndanganModel", "model");
         isLogin();
+        $this->authorization->user_admin();
     }
 
     public function index() 
@@ -22,7 +23,6 @@ class Undangan extends CI_Controller
             'data' => $this->model->getData(),
             'js' => [],
         ];
-        //echo json_encode($data);
        templateView("undangan/undangan", $data);
     }
 
